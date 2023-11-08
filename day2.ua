@@ -1,10 +1,11 @@
-Split ← ⊜□ ≠ ,
-Parsed ← ⍉ ≡(Split@  ⊔) Split@\n &fras "example2"
+Split ← ⊜□≠,
+Input ← ⍉ ≡(Split@  ⊔) Split@\n &fras "example2"
+Parse ← ≐(≍⊔) ⊢
 
-Instructions ← ∵(≍ "forward" ⊔) ⊢ Parsed
-Ups ← ∵(≍ "up" ⊔) ⊢ Parsed
-Downs ← ∵(≍ "down" ⊔) ⊢ Parsed
-Amount ← ♭ ∵(parse ⊔) ↘ 1 Parsed
+Instructions ← Parse Input "forward"
+Ups ← Parse Input "up"
+Downs ← Parse Input "down"
+Amount ← ♭ ∵(parse ⊔) ↘ 1 Input
 
 Depth ← /+ × Amount - Ups Downs
 Position ← /+ ×Instructions Amount
